@@ -1,5 +1,5 @@
 data "openstack_images_image_v2" "default_image" {
-    name = var.image_name
+    name = var.instance_image
   
 }
 
