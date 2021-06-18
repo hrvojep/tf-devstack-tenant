@@ -10,12 +10,12 @@ data "openstack_compute_flavor_v2" "instance_1" {
 resource "openstack_compute_instance_v2" "instance_1" {
   name            = "osgiliath"
   image_id        = data.openstack_images_image_v2.default_image.id
-  flavor_id       = "3"
-
+  flavor_id       = var.instance_flavor
+  
   security_groups = ["Gondor Default Rules"]
 
   metadata = {
-    this = "that"
+    terraform_managed = "true"
   }
 
   network {

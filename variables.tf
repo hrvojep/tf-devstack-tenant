@@ -28,7 +28,7 @@ variable "instance_image" {
   
 }
 variable "instance_flavor" {
-    default = "t2.nano"
+    default = "m1.tiny"
     type = string
   
 }
