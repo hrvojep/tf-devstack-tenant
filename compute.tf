@@ -22,3 +22,19 @@ resource "openstack_compute_instance_v2" "instance_1" {
     port = openstack_networking_port_v2.port_1.id
   }
 }
+
+
+resource "openstack_compute_instance_v2" "instance_2" {
+  name            = "cair andros"
+  image_id        = data.openstack_images_image_v2.default_image.id
+  flavor_id       = data.openstack_compute_flavor_v2.instance_1.id
+  security_groups = ["Gondor Default Rules"]
+
+  metadata = {
+    terraform_managed = "true"
+  }
+
+  network {
+    name = "shared"
+  }
+}
