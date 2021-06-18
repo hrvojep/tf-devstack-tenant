@@ -19,6 +19,6 @@ resource "openstack_compute_instance_v2" "instance_1" {
   }
 
   network {
-    name = openstack_networking_network_v2.boromir_network.id
+    name = openstack_networking_network_v2.boromir_network.name
   }
 }
