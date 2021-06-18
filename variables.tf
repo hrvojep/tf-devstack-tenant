@@ -29,7 +29,7 @@ variable "instance_image" {
 }
 variable "instance_flavor" {
     default = "t2.nano"
-    type = "string"
+    type = string
   
 }
 
