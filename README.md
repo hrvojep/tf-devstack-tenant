@@ -9,4 +9,7 @@ Add the route:
 
 `sudo route add 172.24.4.0/24 192.168.1.123`
 
-This will add the network route with the nexthop of the OpenStack instance.
+This will add the network route with the nexthop of the OpenStack instance. This is not persistent through restarts.
+
+
+###

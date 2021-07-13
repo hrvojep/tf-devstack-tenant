@@ -16,6 +16,7 @@ resource "openstack_compute_instance_v2" "instance_1" {
   metadata = {
     terraform_managed = "true"
   }
+  key_pair = openstack_compute_keypair_v2.laptop.name
 
   network {
     name = openstack_networking_network_v2.boromir_network.name
@@ -33,8 +34,15 @@ resource "openstack_compute_instance_v2" "instance_2" {
   metadata = {
     terraform_managed = "true"
   }
+  key_pair = openstack_compute_keypair_v2.laptop.name
 
   network {
     name = "shared"
   }
+}
+
+resource "openstack_compute_keypair_v2" "laptop" {
+  name = "burkey-laptop"
+  public_key = var.ssh_public_key
+  
 }
